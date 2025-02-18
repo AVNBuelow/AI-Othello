@@ -25,3 +25,15 @@ replay_pid*
 
 # Mac
 *.DS_Store
+
+# imgs folder
+imgs/
+
+# intellij
+.idea/
+
+# iml
+*.iml
+
+# build folder
+out/
