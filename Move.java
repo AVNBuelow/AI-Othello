@@ -8,4 +8,6 @@ public class Move {
         this.utility = utility;
     }
 
+    public String toString() { return "Position: " + this.pos + " with utility of " + this.utility; }
+
 }
