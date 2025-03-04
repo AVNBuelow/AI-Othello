@@ -36,8 +36,7 @@ public class Minimax implements IOthelloAI{
         for (Position pos : state.legalMoves()){
             GameState state2 = Result(state, pos, state.getPlayerInTurn());
             if (state2 == null) { continue; }
-
-            Move m2 = min_value(state2, alpha, beta, depth++);
+            Move m2 = min_value(state2, alpha, beta, depth+1);
             if (m2.utility > m.utility) {
                 m.utility = m2.utility;
                 m.pos = pos;
