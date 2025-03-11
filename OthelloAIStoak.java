@@ -5,7 +5,7 @@
 
 public class OthelloAIStoak implements IOthelloAI{
 
-    private static final int maxDepth = 10;
+    private static final int maxDepth = 8;
     private static final boolean useMatrix = true;
     private float[][] penaltyMatrix;
     public Position decideMove(GameState s){
@@ -122,14 +122,14 @@ public class OthelloAIStoak implements IOthelloAI{
         matrix[size-1][size-1]  = 100f;
 
         // Around corners
-        matrix[1][0]            = 30f;
-        matrix[0][1]            = 30f;
-        matrix[size-1][size-2]  = 30f;
-        matrix[size-2][size-1]  = 30f;
-        matrix[0][size-2]       = 30f;
-        matrix[1][size-1]       = 30f;
-        matrix[size-1][1]       = 30f;
-        matrix[size-2][0]       = 30f;
+        matrix[1][0]            = 15f;
+        matrix[0][1]            = 15f;
+        matrix[size-1][size-2]  = 15f;
+        matrix[size-2][size-1]  = 15f;
+        matrix[0][size-2]       = 15f;
+        matrix[1][size-1]       = 15f;
+        matrix[size-1][1]       = 15f;
+        matrix[size-2][0]       = 15f;
 
         // Around corners diagonally
         matrix[1][1]            = 1f;
