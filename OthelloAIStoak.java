@@ -9,10 +9,13 @@
 public class OthelloAIStoak implements IOthelloAI{
 
     // max depth that the algorithm traverses
-    private static final int maxDepth = 8;
+    private static final int maxDepth = 9;
 
     // boolean that decides whether to use the penalty matrix in evaluations
     private static final boolean useMatrix = true;
+
+    // this is a debug-mode that prints search delays and the evaluation matrix
+    private static final boolean debugMode = false;
 
     // penalty matrix used for board evaluation
     private float[][] penaltyMatrix;
@@ -28,7 +31,9 @@ public class OthelloAIStoak implements IOthelloAI{
         }
         double timer = System.currentTimeMillis();
         Position p = minimax_search(s);
-        System.out.println("Time taken: " + ((System.currentTimeMillis() - timer) / 1000) + " to achieve p: " + p);
+        if (debugMode){
+            System.out.println("Time taken: " + ((System.currentTimeMillis() - timer) / 1000) + " to achieve p: " + p);
+        }
         return p;
     }
 
@@ -190,8 +195,10 @@ public class OthelloAIStoak implements IOthelloAI{
         matrix[size-2][1]       = 1f;
         matrix[1][size-2]       = 1f;
 
-        // Prints Matrix in terminal
-        PrintBoard(matrix);
+        if (debugMode){
+            // Prints Matrix in terminal if debug-mode is enabled
+            PrintBoard(matrix);
+        }
 
         return matrix;
     }
